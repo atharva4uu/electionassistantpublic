@@ -577,11 +577,7 @@ async function sendMessage() {
   showTyping();
 
   try {
-    const backendUrl = window.location.hostname === 'localhost' 
-      ? 'http://localhost:3000/api/chat'
-      : 'https://electiq-backend.onrender.com/api/chat';
-
-    const response = await fetch(backendUrl, {
+    const response = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
